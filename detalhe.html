@@ -1,0 +1,102 @@
+<ons-page ng-controller="DetalheController">
+  <style>
+
+.margem12 {
+	margin: 12px;
+	}
+	
+</style>  
+    <ons-toolbar>
+    <div class="left"><ons-toolbar-button onclick="MeuNavigator.pushPage('about.html')">Voltar</ons-toolbar-button></div>
+    <div class="center">Mesa {{item.mesa}}</div>
+    </ons-toolbar>
+
+	            <ons-list class="list-top" style="padding-top: 10px; background-color:{{corchamando}};">
+                    <ons-list-item>
+                        <ons-row>
+                            <ons-col width="80%" style="margin-top: -5px;">
+								<span style="color:white; font-weight:bold; " ng-show="chamando">Chamando garçom</span>
+								<span style="color:black; font-size:13px; " ng-show="!chamando">Clique para ativar chamado</span>
+                            </ons-col>
+							<ons-col class="left">
+							
+							<span style="float: right; padding-right:2px;">
+								<span style="padding:10px">
+									<label class="switch">
+									<input type="checkbox" class="switch__input" ng-checked="chamando" ng-click="updateSelection($event)">
+									<div class="switch__toggle"></div>
+									</label>
+								</span>
+							</span>
+                            </ons-col>
+                        </ons-row> 
+                    </ons-list-item>
+                </ons-list>
+	
+            <ons-list class="list-top" ng-show="pedidosativos.length > 0">
+                    <ons-list-header style="min-height:44px;" ng-click="MarcarTodosEnv()">
+						<span style="display: inline-block; margin-top:10px;">Pedidos Enviados</span>
+						<span style="float: right; padding-right:12px;">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="chktodosenviados.Selected" ng-click="MarcarTodosEnviados()" >
+							<div class="checkbox__checkmark"></div>
+						</label></spam></ons-list-header>
+                    <ons-list-item ng-repeat="pedido in pedidosativos">
+                        <ons-row>
+                            <ons-col width="12%"> 
+                            <span class="notification margem12">+</span>
+                            </ons-col>
+                            <ons-col width="80%" ng-click="marca(1,pedido.codigopedido)">
+                             {{pedido.quantidade}} {{pedido.itemcardapio}}
+                            </ons-col>
+							<ons-col class="left">
+                            
+							<label class="checkbox">
+							<input type="checkbox" ng-model="pedido.Selected" >
+							<div class="checkbox__checkmark"></div>
+							</label>
+
+                            </ons-col>
+                        </ons-row> 
+                    </ons-list-item>
+					<ons-list-item>
+					<ons-col class="right">
+						<button class="button--quiet" ng-click="ColocarEmAndamento()">colocar em andamento</button>
+					</ons-col>
+					</ons-list-item>
+                </ons-list>
+
+                <ons-list class="list-top"  ng-show="pedidosemandamento.length > 0">
+                    <ons-list-header style="min-height:44px;" ng-click="MarcarTodosEA()">
+					<span style="display: inline-block; margin-top:10px;">Pedidos Em Andamento</span>
+					<span style="float: right; padding-right:12px;">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="chktodosemandamento.Selected" ng-click="MarcarTodosEmAndamento()" >
+							<div class="checkbox__checkmark"></div>
+						</label></spam>
+					</ons-list-header>
+                    <ons-list-item ng-repeat="pedido in pedidosemandamento">
+                        <ons-row>
+                            <ons-col width="12%"> 
+                            <span class="notification notificationverde margem12"> + </span>
+                            </ons-col>
+                            <ons-col width=80% ng-click="marca(2,pedido.codigopedido)"">
+                            {{pedido.quantidade}} {{pedido.itemcardapio}}
+                            </ons-col>
+							<ons-col class="left">
+							<label class="checkbox">
+							<input type="checkbox" ng-model="pedido.Selected">
+							<div class="checkbox__checkmark"></div>
+							</label>
+							</ons-col>
+                        </ons-row> 
+                    </ons-list-item>
+					<ons-list-item>
+					<ons-col class="right">
+						<button  class="button--quiet"   ng-click="ColocarEntregue()">colocar entregue</button> 
+					</ons-col>
+					</ons-list-item>
+                </ons-list>
+
+
+</ons-page>

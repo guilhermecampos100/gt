@@ -1,0 +1,26 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.sensation" version="1.8.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>GarçomApp</name>
+	<icon src="icon.png" />
+    <description>
+    Interface do Garçom usando Sensation template
+    </description>
+    
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device-motion" />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.vibration" />
+
+    <gap:plugin name="de.appplant.cordova.plugin.email-composer" />
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+
+    <gap:plugin name="com.pushwoosh.plugins.pushwoosh"/>
+
+    <content src="index.html" />
+    <access origin="*" />
+
+</widget>

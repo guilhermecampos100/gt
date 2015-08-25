@@ -1,0 +1,47 @@
+<ons-page ng-controller="AboutController">
+    
+    <ons-toolbar>
+    <div class="left"><ons-toolbar-button ng-click="abreLogin()">
+	<ons-icon icon="fa-sign-in">
+	</ons-toolbar-button></div>
+    <div class="center">{{nome_garcom}} {{token}}</div>
+	  
+	<div class="right">
+	<ons-toolbar-button ng-click="MeuNavigator.pushPage('trocafoto.html',{foto_garcom: '{{foto_garcom}}', nome_garcom: '{{nome_garcom}}'})">
+	<span><img src="http://chamagar.com/fotos/{{foto_garcom}}" style="padding: 4px 2px 2px 2px; border-radius: 5px;" width="25px"></span>
+	</ons-toolbar-button>
+	</div>		
+    </ons-toolbar>
+			
+
+	<ons-list >
+	<ons-list-item modifier="chevron" class="item" ng-repeat="member in about" ng-click="showDetail($index)">
+		<ons-row>
+			<ons-col width="80px">
+				<section style="padding: 0px 10px 10px 10px;">
+				<div style="background-color:{{member.corfundo}} !important; padding: 10px 10px 10px 10px; border-radius: 5px;"><center>
+				<font style="font-size:30px; color:white;" ng-show="(member.corfundo != 'lightgrey')">{{member.mesa}}</font>
+				<font style="font-size:30px;" ng-show="(member.corfundo == 'lightgrey')" >{{member.mesa}}</font>
+				</center>
+                </div>
+				<center>
+				<span ng-show="member.status == 1"><font style="font-size:11px">chamando</font>
+				</center>
+                </section>
+			</ons-col>
+			<ons-col>
+			    <section>
+				<div class="social"><ons-icon icon="fa-sign-in" fixed-width="true"></ons-icon>TOKEN: <b>{{member.token}}</b></div>
+                <div class="social" ng-show="member.fechaenv==1"><font color=red><ons-icon icon="fa-money" fixed-width="true"></ons-icon> FECHAR A CONTA ENVIADO </FONT></div>
+				<div class="social" ng-show="member.fechaand==1" style="line-height:21px"><font color=green><ons-icon icon="fa-money" fixed-width="true"></ons-icon> FECHAR A CONTA EM ANDAMENTO </FONT></div>
+                <div class="social"><span ng-show="member.pedenv!=0" style="line-height:21px"><span class="notification">{{member.pedenv}}</span> PEDIDOS ENVIADOS &nbsp; </span></div>
+				<div class="social"><span ng-show="member.pedand!=0" style="line-height:21px"><span class="notification notificationverde" >{{member.pedand}}</span> PEDIDOS EM ANDAMENTO</span></div>
+				
+                </section>
+			</ons-col>
+		</ons-row>
+	</ons-list-item>
+	
+	
+</ons-page>
+
