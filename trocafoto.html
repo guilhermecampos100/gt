@@ -1,11 +1,15 @@
 <ons-page  ng-controller="TrocaFotoController">
     <ons-toolbar>
+	 <div class="left"><ons-back-button>Voltar</ons-back-button></div>
      <div class="center">{{token}}</div>
     </ons-toolbar>
 	
 
-	<section style="padding: 0px 10px 10px 10px;">
-		<span><img src="http://chamagar.com/fotos/{{foto_garcom}}" style="padding: 4px 2px 2px 2px; border-radius: 5px;" width="100px"></span>
+	<section style="padding: 0px 10px 10px 10px; ">
+	<center>
+		<span><img src="http://chamagar.com/fotos/{{foto_garcom}}" style="padding: 4px 2px 2px 2px; border-radius: 5px;" width="80%"></span>
 		<div >{{nome_garcom}} </div>
-		<div><button class="button">Alterar</button></div>
+		<div><br><br><button class="button login-button">Alterar</button></div>
+		</center>
+		</section>
 </ons-page>

@@ -125,7 +125,7 @@ app.factory('AboutData', function()
 
     app.controller('TrocaFotoController', function($interval, $scope, $rootScope, $http, AboutData) {
 	$scope.token = $rootScope.tokenGlobal
-	var page = navi.getCurrentPage();
+	var page = MeuNavigator.getCurrentPage();
 	$scope.foto_garcom = page.options.foto_garcom;
 	$scope.nome_garcom = page.options.nome_garcom;
 	});
