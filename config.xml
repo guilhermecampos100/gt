@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.sensation" version="1.8.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>GarçomApp 1.1</name>
-	<icon src="icon.png" />
+    <name>ChamaGar 1.2</name>
+	<icon src="iconazul.png" />
     <description>
     Interface do Garçom
     </description>
