@@ -197,6 +197,20 @@ app.factory('AboutData', function()
 		$scope.chamando = false;
 
 		
+		$scope.ativarchamado = function($event) {
+			$scope.chamando = true;
+			$scope.corchamando = 'red';
+			processaacao(3,$scope.item.token);
+		}
+		
+		$scope.desativarchamado = function($event) {
+			$scope.chamando = true;
+			$scope.corchamando = 'lightgrey';
+			processaacao(4,$scope.item.token);
+		}	
+		
+		
+		
 		$scope.updateSelection = function($event) {
 		  var checkbox = $event.target;
 		  var action = (checkbox.checked ? 'add' : 'remove');
